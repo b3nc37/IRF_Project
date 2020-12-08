@@ -16,5 +16,18 @@ namespace Alkalmazas
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FileMegnyito fileMegnyito = new FileMegnyito();
+            fileMegnyito.Megnynitas();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Konverter konverter = new Konverter();
+            konverter.Konvertalas();
+        }
     }
 }
