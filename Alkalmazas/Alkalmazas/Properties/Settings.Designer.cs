@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Beadando.Properties
+namespace Alkalmazas.Properties
 {
 
 

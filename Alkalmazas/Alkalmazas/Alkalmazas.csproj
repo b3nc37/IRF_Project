@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F250EF6-3083-4506-B1BA-65FC53B8CE5F}</ProjectGuid>
+    <ProjectGuid>{B7A60042-B8A4-43EA-8C8B-F92E7BE1011F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Beadando</RootNamespace>
-    <AssemblyName>Beadando</AssemblyName>
+    <RootNamespace>Alkalmazas</RootNamespace>
+    <AssemblyName>Alkalmazas</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

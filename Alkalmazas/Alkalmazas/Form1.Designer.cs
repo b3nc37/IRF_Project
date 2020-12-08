@@ -1,4 +1,4 @@
-﻿namespace Beadando
+﻿namespace Alkalmazas
 {
     partial class Form1
     {
