@@ -28,81 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
+            this.helpButton = new System.Windows.Forms.Button();
             this.testButton = new System.Windows.Forms.Button();
+            this.convertButton = new System.Windows.Forms.Button();
+            this.clockLabel = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(230, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Xml to CSV Converter";
+            this.title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.title.Location = new System.Drawing.Point(134, 69);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(368, 45);
+            this.title.TabIndex = 0;
+            this.title.Text = "XML to CSV Converter";
             // 
-            // button1
+            // helpButton
             // 
-            this.button1.Location = new System.Drawing.Point(594, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Súgó";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(393, 111);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(201, 43);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "XML megnyitás";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(22, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 22);
-            this.textBox1.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(233, 201);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(201, 43);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Konvertálás CsV-be";
-            this.button3.UseVisualStyleBackColor = true;
+            this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.helpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(220)))), ((int)(((byte)(211)))));
+            this.helpButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.helpButton.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.helpButton.Location = new System.Drawing.Point(574, 13);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(44, 53);
+            this.helpButton.TabIndex = 1;
+            this.helpButton.Text = "?";
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // testButton
             // 
-            this.testButton.Location = new System.Drawing.Point(513, 210);
+            this.testButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.testButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(220)))), ((int)(((byte)(211)))));
+            this.testButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.testButton.Location = new System.Drawing.Point(120, 137);
             this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(75, 23);
+            this.testButton.Size = new System.Drawing.Size(394, 53);
             this.testButton.TabIndex = 5;
-            this.testButton.Text = "Test";
-            this.testButton.UseVisualStyleBackColor = true;
+            this.testButton.Text = "Open XML";
+            this.testButton.UseVisualStyleBackColor = false;
             this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            // 
+            // convertButton
+            // 
+            this.convertButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.convertButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(220)))), ((int)(((byte)(211)))));
+            this.convertButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.convertButton.Location = new System.Drawing.Point(120, 210);
+            this.convertButton.Name = "convertButton";
+            this.convertButton.Size = new System.Drawing.Size(394, 53);
+            this.convertButton.TabIndex = 6;
+            this.convertButton.Text = "Convert to CSV";
+            this.convertButton.UseVisualStyleBackColor = false;
+            // 
+            // clockLabel
+            // 
+            this.clockLabel.AutoSize = true;
+            this.clockLabel.Location = new System.Drawing.Point(11, 13);
+            this.clockLabel.Name = "clockLabel";
+            this.clockLabel.Size = new System.Drawing.Size(67, 19);
+            this.clockLabel.TabIndex = 7;
+            this.clockLabel.Text = "Real Time";
+            // 
+            // exitButton
+            // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(220)))), ((int)(((byte)(211)))));
+            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.exitButton.Location = new System.Drawing.Point(556, 272);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(61, 53);
+            this.exitButton.TabIndex = 8;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 304);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(195)))), ((int)(((byte)(201)))));
+            this.ClientSize = new System.Drawing.Size(626, 338);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.clockLabel);
+            this.Controls.Add(this.convertButton);
             this.Controls.Add(this.testButton);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.helpButton);
+            this.Controls.Add(this.title);
+            this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "XML to CSV";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,12 +132,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button testButton;
+        private System.Windows.Forms.Button convertButton;
+        private System.Windows.Forms.Label clockLabel;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 

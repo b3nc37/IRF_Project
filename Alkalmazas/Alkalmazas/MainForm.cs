@@ -19,18 +19,19 @@ namespace Alkalmazas
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Súgó");
-        }
-
         private void testButton_Click(object sender, EventArgs e)
         {
             try
             {
                 XmlDocument xmlDocument = XmlParser.LoadXml(@"Input/schema.xml");
-                var asd = XmlParser.GetHeadersForCsv(xmlDocument); 
+                var proba = XmlParser.GetHeadersForCsv(xmlDocument);
+                var proba2 = XmlParser.GetRawValues(xmlDocument);
+                foreach (var item in proba2)
+                {
+                    Console.WriteLine(item);
+                }
                 
+
 
             }
             catch (FileNotFoundException)
@@ -41,6 +42,17 @@ namespace Alkalmazas
             {
                 MessageBox.Show($"Ismeretlen hiba történt. {ex.Message}");
             }
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            HelpForm hf = new HelpForm();
+            hf.Show();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

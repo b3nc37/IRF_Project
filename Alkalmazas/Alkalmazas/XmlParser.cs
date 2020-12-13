@@ -7,7 +7,7 @@ using System.Xml;
 namespace Alkalmazas
 {
     
-    public class XmlParser
+    public static class XmlParser
     {
         public static XmlDocument LoadXml(string path) 
         {
@@ -43,6 +43,36 @@ namespace Alkalmazas
             return CreateCsv(headers);
         }
 
+        public static IEnumerable<string> GetRawValues(XmlDocument xmlDocument) 
+        {
+            var records = xmlDocument.DocumentElement?.ChildNodes;
+            if (records is null)
+            {
+                throw new Exception("Érvénytelen az Xml fájl");
+            }
+
+            List<string> values = new List<string>();
+            foreach (var record in records)
+            {
+                var currentRecord = record as XmlElement;
+                if (!(currentRecord is null))
+                {
+                    foreach (var item in currentRecord.ChildNodes)
+                    {
+                        var leaf = item as XmlElement;
+                        if (leaf != null)
+                        {
+                            values.Add(leaf.InnerText);
+                        }
+                    }
+
+                    yield return CreateCsv(values);
+                    values.Clear();
+                }
+            }
+
+        }
+
         private static string CreateCsv(IEnumerable<string> values) 
         {
             StringBuilder sb = new StringBuilder();
@@ -52,5 +82,6 @@ namespace Alkalmazas
             }
             return sb.ToString().TrimEnd(';');
         }
+
     }
 }
