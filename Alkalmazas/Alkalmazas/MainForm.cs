@@ -22,15 +22,23 @@ namespace Alkalmazas
 
         private void testButton_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            
             try
             {
-                XmlDocument xmlDocument = XmlParser.LoadXml(@"Input/schema.xml");
-                var proba = XmlParser.GetHeadersForCsv(xmlDocument);
-                var proba2 = XmlParser.GetRawValues(xmlDocument);
-                foreach (var item in proba2)
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    Console.WriteLine(item);
+                    XmlDocument xmlDocument = XmlParser.LoadXml(ofd.FileName);
+                    var proba = XmlParser.GetHeadersForCsv(xmlDocument); 
+                    var proba2 = XmlParser.GetRawValues(xmlDocument);
+                    foreach (var item in proba2)
+                    {
+                        Console.WriteLine(item);
+                    }
                 }
+                
+                
+                
                 
 
 
