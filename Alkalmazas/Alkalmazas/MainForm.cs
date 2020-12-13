@@ -29,7 +29,7 @@ namespace Alkalmazas
             try
             {
                 XmlDocument xmlDocument = XmlParser.LoadXml(@"Input/schema.xml");
-                 
+                var asd = XmlParser.GetHeadersForCsv(xmlDocument); 
                 
 
             }
