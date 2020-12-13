@@ -17,6 +17,7 @@ namespace Alkalmazas
         public MainForm()
         {
             InitializeComponent();
+            timer.Start();
         }
 
         private void testButton_Click(object sender, EventArgs e)
@@ -53,6 +54,12 @@ namespace Alkalmazas
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            clockLabel.Text = DateTime.Now.ToLongTimeString();
+            dateLabel.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

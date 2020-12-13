@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
             this.testButton = new System.Windows.Forms.Button();
             this.convertButton = new System.Windows.Forms.Button();
             this.clockLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.dateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
@@ -89,7 +92,7 @@
             // clockLabel
             // 
             this.clockLabel.AutoSize = true;
-            this.clockLabel.Location = new System.Drawing.Point(11, 13);
+            this.clockLabel.Location = new System.Drawing.Point(24, 37);
             this.clockLabel.Name = "clockLabel";
             this.clockLabel.Size = new System.Drawing.Size(67, 19);
             this.clockLabel.TabIndex = 7;
@@ -109,12 +112,27 @@
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(24, 9);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(67, 19);
+            this.dateLabel.TabIndex = 9;
+            this.dateLabel.Text = "Real Date";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(195)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(626, 338);
+            this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clockLabel);
             this.Controls.Add(this.convertButton);
@@ -138,6 +156,8 @@
         private System.Windows.Forms.Button convertButton;
         private System.Windows.Forms.Label clockLabel;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label dateLabel;
     }
 }
 
