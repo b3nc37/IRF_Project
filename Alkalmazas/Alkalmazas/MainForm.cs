@@ -29,6 +29,9 @@ namespace Alkalmazas
             try
             {
                 XmlDocument xmlDocument = XmlParser.LoadXml(@"Input/schema.xml");
+                 
+                
+
             }
             catch (FileNotFoundException)
             {
