@@ -16,7 +16,7 @@ namespace Alkalmazas
         private void testButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter= "xml files (*.xml)|*.xml|All files (*.*)|*.*";
+            dialog.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
 
             try
             {
@@ -27,10 +27,13 @@ namespace Alkalmazas
                         XmlDocument xmlDocument = XmlParser.LoadXml(dialog.FileName);
                         var proba = XmlParser.GetHeadersForCsv(xmlDocument);
                         var proba2 = XmlParser.GetRawValues(xmlDocument);
+                        CsvWriter csvWriter = new CsvWriter(null);
+                        csvWriter.WriteRow(proba + "\n");
                         foreach (var item in proba2)
                         {
-                            Console.WriteLine(item);
+                            csvWriter.WriteRow(item + "\n");
                         }
+
                     }
                     else
                     {
