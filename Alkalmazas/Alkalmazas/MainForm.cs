@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -22,35 +15,36 @@ namespace Alkalmazas
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter= "xml files (*.xml)|*.xml|All files (*.*)|*.*";
+
             try
             {
-                if (ofd.ShowDialog() == DialogResult.OK)
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    XmlDocument xmlDocument = XmlParser.LoadXml(ofd.FileName);
-                    var proba = XmlParser.GetHeadersForCsv(xmlDocument); 
-                    var proba2 = XmlParser.GetRawValues(xmlDocument);
-                    foreach (var item in proba2)
+                    if (dialog.FileName.EndsWith(".xml"))
                     {
-                        Console.WriteLine(item);
+                        XmlDocument xmlDocument = XmlParser.LoadXml(dialog.FileName);
+                        var proba = XmlParser.GetHeadersForCsv(xmlDocument);
+                        var proba2 = XmlParser.GetRawValues(xmlDocument);
+                        foreach (var item in proba2)
+                        {
+                            Console.WriteLine(item);
+                        }
                     }
-                }
-                
-                
-                
-                
+                    else
+                    {
+                        MessageBox.Show($"Ismeretlen hiba történt.");
+                    }
 
+                }
 
             }
             catch (FileNotFoundException)
             {
                 MessageBox.Show("A megadott fájl nem található!");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ismeretlen hiba történt. {ex.Message}");
-            }
+
         }
 
         private void helpButton_Click(object sender, EventArgs e)
