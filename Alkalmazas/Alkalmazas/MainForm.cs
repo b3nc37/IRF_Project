@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace Alkalmazas
 {
@@ -40,6 +38,7 @@ namespace Alkalmazas
             if (!string.IsNullOrEmpty(path))
             {
                 csvPath = path;
+                EnableConverter();
             }
         }
 
@@ -50,6 +49,29 @@ namespace Alkalmazas
             if (!string.IsNullOrEmpty(path))
             {
                 xmlPath = path;
+                EnableConverter();
+            }
+        }
+
+        private void convertButton_Click(object sender, EventArgs e)
+        {
+            var document = XmlParser.LoadXml(xmlPath);
+            var header = XmlParser.GetHeadersForCsv(document);
+            var innertext = XmlParser.GetRawValues(document);
+
+            CsvWriter csvWriter = new CsvWriter(csvPath);
+            csvWriter.WriteRow(header + "\n");
+            foreach (var item in innertext)
+            {
+                csvWriter.WriteRow(item + "\n");
+            }
+        }
+
+        private void EnableConverter()
+        {
+            if (!string.IsNullOrEmpty(csvPath) && !string.IsNullOrEmpty(xmlPath))
+            {
+                convertButton.Enabled = true;
             }
         }
     }
