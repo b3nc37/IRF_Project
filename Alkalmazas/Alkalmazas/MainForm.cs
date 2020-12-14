@@ -7,47 +7,13 @@ namespace Alkalmazas
 {
     public partial class MainForm : Form
     {
+        private string xmlPath;
+        private string csvPath;
+
         public MainForm()
         {
             InitializeComponent();
             timer.Start();
-        }
-
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
-
-            try
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (dialog.FileName.EndsWith(".xml"))
-                    {
-                        XmlDocument xmlDocument = XmlParser.LoadXml(dialog.FileName);
-                        var proba = XmlParser.GetHeadersForCsv(xmlDocument);
-                        var proba2 = XmlParser.GetRawValues(xmlDocument);
-                        CsvWriter csvWriter = new CsvWriter(null);
-                        csvWriter.WriteRow(proba + "\n");
-                        foreach (var item in proba2)
-                        {
-                            csvWriter.WriteRow(item + "\n");
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Ismeretlen hiba történt.");
-                    }
-
-                }
-
-            }
-            catch (FileNotFoundException)
-            {
-                MessageBox.Show("A megadott fájl nem található!");
-            }
-
         }
 
         private void helpButton_Click(object sender, EventArgs e)
@@ -65,6 +31,26 @@ namespace Alkalmazas
         {
             clockLabel.Text = DateTime.Now.ToLongTimeString();
             dateLabel.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void choosecsvButton_Click(object sender, EventArgs e)
+        {
+            DialogOpen dialogOpen = new DialogOpen();
+            string path = dialogOpen.SaveFile();
+            if (!string.IsNullOrEmpty(path))
+            {
+                csvPath = path;
+            }
+        }
+
+        private void choosexmlButton_Click(object sender, EventArgs e)
+        {
+            DialogOpen dialogOpen = new DialogOpen();
+            string path = dialogOpen.OpenFile();
+            if (!string.IsNullOrEmpty(path))
+            {
+                xmlPath = path;
+            }
         }
     }
 }

@@ -76,7 +76,7 @@
             this.testButton.TabIndex = 5;
             this.testButton.Text = "Choose XML";
             this.testButton.UseVisualStyleBackColor = false;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            this.testButton.Click += new System.EventHandler(this.choosexmlButton_Click);
             // 
             // choosecsvButton
             // 
@@ -89,6 +89,7 @@
             this.choosecsvButton.TabIndex = 6;
             this.choosecsvButton.Text = "Choose CSV";
             this.choosecsvButton.UseVisualStyleBackColor = false;
+            this.choosecsvButton.Click += new System.EventHandler(this.choosecsvButton_Click);
             // 
             // clockLabel
             // 
