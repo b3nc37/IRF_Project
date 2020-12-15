@@ -117,4 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>The application was created to quickly convert XML type 
+files to CSV format.
+
+To use it, the following steps are required:
+
+1.step: Click on "Choose XML" button
+
+2.step: Open an existing CSV file or create a new with 
+"Choose or Create" button
+
+3.step: If the first two steps were correct, 
+then "Convert" button is going to be enabled 
+
+4.step : Click on "Convert" and you are done </value>
+  </data>
 </root>

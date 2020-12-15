@@ -45,9 +45,9 @@
             this.title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.title.Location = new System.Drawing.Point(236, 69);
+            this.title.Location = new System.Drawing.Point(261, 77);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(368, 45);
+            this.title.Size = new System.Drawing.Size(303, 37);
             this.title.TabIndex = 0;
             this.title.Text = "XML to CSV Converter";
             // 
@@ -87,7 +87,7 @@
             this.choosecsvButton.Name = "choosecsvButton";
             this.choosecsvButton.Size = new System.Drawing.Size(470, 65);
             this.choosecsvButton.TabIndex = 6;
-            this.choosecsvButton.Text = "Choose CSV";
+            this.choosecsvButton.Text = "Choose or Create CSV";
             this.choosecsvButton.UseVisualStyleBackColor = false;
             this.choosecsvButton.Click += new System.EventHandler(this.choosecsvButton_Click);
             // 
@@ -97,7 +97,7 @@
             this.clockLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.clockLabel.Location = new System.Drawing.Point(1, 9);
             this.clockLabel.Name = "clockLabel";
-            this.clockLabel.Size = new System.Drawing.Size(106, 28);
+            this.clockLabel.Size = new System.Drawing.Size(85, 21);
             this.clockLabel.TabIndex = 7;
             this.clockLabel.Text = "Real Time";
             // 
@@ -127,7 +127,7 @@
             this.dateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateLabel.Location = new System.Drawing.Point(3, 369);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(104, 28);
+            this.dateLabel.Size = new System.Drawing.Size(83, 21);
             this.dateLabel.TabIndex = 9;
             this.dateLabel.Text = "Real Date";
             // 
@@ -147,7 +147,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(195)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(831, 406);

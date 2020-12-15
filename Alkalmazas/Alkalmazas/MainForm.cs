@@ -55,15 +55,25 @@ namespace Alkalmazas
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            var document = XmlParser.LoadXml(xmlPath);
-            var header = XmlParser.GetHeadersForCsv(document);
-            var innertext = XmlParser.GetRawValues(document);
-
-            CsvWriter csvWriter = new CsvWriter(csvPath);
-            csvWriter.WriteRow(header + "\n");
-            foreach (var item in innertext)
+            try
             {
-                csvWriter.WriteRow(item + "\n");
+                var document = XmlParser.LoadXml(xmlPath);
+                var header = XmlParser.GetHeadersForCsv(document);
+                var innertext = XmlParser.GetRawValues(document);
+
+                CsvWriter csvWriter = new CsvWriter(csvPath);
+                csvWriter.WriteRow(header + "\n");
+                foreach (var item in innertext)
+                {
+                    csvWriter.WriteRow(item + "\n");
+                }
+                convertButton.Enabled = false;
+                MessageBox.Show("A konvertálás sikeresen megtörtént");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ismeretlen hiba");
             }
         }
 

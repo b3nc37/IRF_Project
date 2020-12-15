@@ -13,10 +13,10 @@ namespace Alkalmazas
         {
             var xml = new XmlDocument();
             xml.Load(path); 
-            return xml;
+            return xml; 
         }
         
-        public static string GetHeadersForCsv(XmlDocument xmlDocument)
+        public static string GetHeadersForCsv(XmlDocument xmlDocument) 
         {
             var records = xmlDocument.DocumentElement?.ChildNodes;
             if (records is null)
@@ -66,7 +66,7 @@ namespace Alkalmazas
                         }
                     }
 
-                    yield return CreateCsv(values);
+                    yield return CreateCsv(values); 
                     values.Clear();
                 }
             }
