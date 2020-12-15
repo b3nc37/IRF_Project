@@ -22,7 +22,7 @@ namespace Alkalmazas
         
         public void WriteRow(string row)
         {
-            File.AppendAllText(path, row);
+            File.AppendAllText(path, row); 
         }
     }
 }
